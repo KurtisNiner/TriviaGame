@@ -1,13 +1,11 @@
 //setting & naming variables 
 
-var rightAnswer;
-var wrongAnswer;
-var unanswered;
-var question = 0;
 var score = 0;
+var question = 0;
 var countdown = 30;
 var index = 0;
 var canPress = true;
+clockRunning = false;
 
 //questions in the game
 //make this an object instead of an array. keep questions as an array.
@@ -24,14 +22,16 @@ var quiz = {
 $(document).ready(function(startGame){
 
 function printQuestion(){
-    
+   
     if(index < quiz.questions.length){
         $("#questions").text(quiz.questions[index]);
+        clockRunning = true;
         canPress = true;
     }
     else {
         console.log(quiz.questions[index]);
         alert("game over");
+        clockRunning = false;
         canPress=false;
     }
 
@@ -60,33 +60,42 @@ document.onkeyup = function(event){
                 alert("you're Correct!");
                 score++;
                 console.log(score);
+                $("#score").text("Current Score: " + score + " points");
             } else{
                 alert("you're wrong");
             }
-            index++
+        
+            index++;
             printQuestion();
+            timer();
+            
         }
     }
 }
 
 
+
+
+
+//function that starts the timer 
+function timer(){
+    clockrunning = true;
+    if (countdown <= 0) {
+     clearInterval(counter);
+    }   
+     $("#timer").html("Time remaining: " + countdown + " secs");
+    }
+
 printQuestion();
+timer();
 
 });
 
-//function that starts the timer
 
 
 
 
-// function timer(){
-//     countdown--;
-//     if (countdown <= 0) {
-//      clearInterval(counter);
-//      return;
-//     }
-    
-//      $("#timer").html("Time remaining: " + "00:" + countdown + " secs");
-//     }
+
+
     
 //function that renders the questions
