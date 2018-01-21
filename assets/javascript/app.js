@@ -90,6 +90,7 @@ printQuestion();
 timer();
 
 });
+//i am trying to get the timer to work. I am aware it isnt working with the code at this point in time
 
 
 

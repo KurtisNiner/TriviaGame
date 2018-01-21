@@ -1,0 +1,33 @@
+body{
+    background-color: lime;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    line-height: 40px;
+}
+
+.heading{
+    color: black;
+}
+
+#timer{
+    background-color: skyblue;
+    color: red;
+    font-size: 30px;
+    padding: 20px;
+    margin: 5px;
+}
+
+#questions{
+    background-color: skyblue;
+    color: black;
+    font-size: 30px;
+    margin: 5px;
+}
+
+#score{
+    background-color: skyblue;
+    color: green;
+    font-size: 30px;
+    margin: 5px;
+}
