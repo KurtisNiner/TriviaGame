@@ -3,7 +3,7 @@ body{
     text-align: center;
     margin: 0;
     padding: 20px;
-    line-height: 40px;
+    line-height: 30px;
 }
 
 .heading{
@@ -15,14 +15,15 @@ body{
     color: red;
     font-size: 30px;
     padding: 20px;
-    margin: 5px;
+    margin-top: 40px;
 }
 
 #questions{
     background-color: skyblue;
     color: black;
     font-size: 30px;
-    margin: 5px;
+    margin-top: 40px;
+    padding: 10px;
 }
 
 #score{
