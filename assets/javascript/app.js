@@ -2,7 +2,7 @@
 
 var score = 0;
 var question = 0;
-var countdown = 30;
+var countdown = 10;
 var index = 0;
 var canPress = true;
 clockRunning = false;
@@ -60,27 +60,30 @@ document.onkeyup = function(event){
         
             index++;
             printQuestion();
-            timer();
+           
             
         }
     }
 }
 
 
-
-
-
 //function that starts the timer 
-function timer(){
-    clockrunning = true;
-    if (countdown <= 0) {
-     clearInterval(counter);
-    }   
-     $("#timer").html("Time remaining: " + countdown + " secs");
+
+setInterval (function(){
+    countdown--;
+    if(countdown >= 0){
+        $("#timer").text(countdown + " seconds left to answer");
+       
     }
+    else if(countdown === 0){
+        clearInterval(counter);
+        index++;
+        printQuestion();
+    }
+    }, 1000);
 
 printQuestion();
-timer();
+
 
 });
 //i am trying to get the timer to work. I am aware it isnt working with the code at this point in time
