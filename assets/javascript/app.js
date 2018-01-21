@@ -19,11 +19,11 @@ var quiz = {
   };
 
  //prints questions to page and console.logs it as well
-$(document).ready(function(startGame){
+$(document).ready(function(){
 
 function printQuestion(){
    
-    if(index < quiz.questions.length){
+    if(index <= quiz.questions.length){
         $("#questions").text(quiz.questions[index]);
         clockRunning = true;
         canPress = true;
@@ -35,14 +35,6 @@ function printQuestion(){
         canPress=false;
     }
 
-    // if(index >= quiz.questions.length){
-    //     alert("game Over");
-    //     canPress = false;
-    // } else{
-    //     console.log(quiz.questions[index]);
-    //     $("#questions").text(quiz.questions[index]);
-    // }
-    
 }
 
 document.onkeyup = function(event){
@@ -63,6 +55,7 @@ document.onkeyup = function(event){
                 $("#score").text("Current Score: " + score + " points");
             } else{
                 alert("you're wrong");
+                $("#score").text("Current Score: " + score + " points");
             }
         
             index++;
